@@ -22,7 +22,7 @@ export default function Projects() {
                 Projects
             </h1>
 
-            <div className="flex flex-col gap-8 p-4">
+            <div className="flex flex-col gap-8 p-0 md:p-4">
                 <div className="flex flex-col md:flex-row gap-4 md:gap-8">
                     <Image
                         src={Newmann}
@@ -108,15 +108,10 @@ export default function Projects() {
                             CAE
                         </h1>
 
-                        <p className="text-(--subtext) text-md leading-tight mt-2">
-                            Gmail oriented dashboard that helps users manage
-                            labels with AI and more.
-                        </p>
-
                         <p className="text-(--subtext) text-md leading-tight mt-2 mb-4">
-                            Built a responsive frontend with Next.js and
-                            Tailwind CSS, starting from a Figma wireframe to map
-                            out the UI/UX.
+                            A web application developed to manage employees,
+                            their shifts and tasks. This project was assigned to
+                            me during my internship at CAE.
                         </p>
 
                         <div className="flex gap-2 flex-wrap">
