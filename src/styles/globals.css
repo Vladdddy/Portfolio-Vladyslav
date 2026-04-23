@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Onest:wght@100..900&family=Unbounded:wght@200..900&display=swap");
+@import "tailwindcss";
+
+:root {
+    /* Layout colors */
+    --light-bg: #f7f7f7;
+    --div-bg: #ffffff;
+    --div-bg-hover: #e6e6e6;
+    --div-stroke: #e0e0e0;
+    --separator: #ebebeb;
+    --button-border: #e6e6e6;
+
+    /* Primary color variants */
+    --primary: #007cd5;
+    --primary-hover: #005fa3;
+    --primary-active: #004880;
+    --primary-light: #e0f2ff;
+
+    /* Typography */
+    --text: #333333;
+    --subtext: #666666;
+    --placeholder-text: #999999;
+    --green: #22c55e;
+    --green-light: #dcfce7;
+
+    /* Shadows */
+    --shadow: #00000010;
+
+    /* Fonts */
+    --font-primary: "Onest", sans-serif;
+    --font-secondary: "Unbounded", sans-serif;
+}
+
+body {
+    background: var(--light-bg);
+    color: var(--text);
+    font-family: "Onest", sans-serif;
+}
+
+.no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
