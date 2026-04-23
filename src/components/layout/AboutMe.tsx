@@ -54,6 +54,7 @@ export default function AboutMe() {
                     >
                         <LinkedinIcon className="w-7 h-7" />
                     </span>
+
                     <span
                         onClick={() =>
                             window.open("https://github.com/Vladdddy", "_blank")
@@ -62,6 +63,7 @@ export default function AboutMe() {
                     >
                         <GithubIcon className="w-7 h-7" />
                     </span>
+
                     <span
                         onClick={() =>
                             window.open(
