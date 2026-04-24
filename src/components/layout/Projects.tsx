@@ -14,16 +14,25 @@ import FigmaIcon from "@/assets/icons/figma.png";
 import ReactIcon from "@/assets/icons/react.png";
 import ExpressIcon from "@/assets/icons/express.png";
 import SQLIcon from "@/assets/icons/sql.png";
+import { useInView } from "@/hooks/useInView";
 
 export default function Projects() {
+    const { ref, inView } = useInView();
+
     return (
-        <div className="bg-(--div-bg) border border-(--div-stroke) p-4 rounded-xl flex flex-col gap-4 flex-1 shadow-[0_4px_12px_var(--shadow)] mt-10">
+        <div
+            ref={ref}
+            className={`bg-(--div-bg) border border-(--div-stroke) p-4 rounded-xl flex flex-col gap-4 flex-1 shadow-[0_4px_12px_var(--shadow)] mt-10 animate-on-scroll ${inView ? "is-visible" : ""}`}
+        >
             <h1 className="text-lg font-semibold text-(--subtext) border-b border-(--separator) pb-2 ">
                 Coding Projects
             </h1>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 md:gap-8 p-0 md:p-4">
-                <div className="flex flex-col gap-4">
+                <div
+                    className={`flex flex-col gap-4 animate-fade ${inView ? "is-visible" : ""}`}
+                    style={{ transitionDelay: inView ? "200ms" : "0ms" }}
+                >
                     <Image
                         src={Newmann}
                         alt="Newmann Project"
@@ -89,7 +98,10 @@ export default function Projects() {
                     </div>
                 </div>
 
-                <div className="flex flex-col gap-4">
+                <div
+                    className={`flex flex-col gap-4 animate-fade ${inView ? "is-visible" : ""}`}
+                    style={{ transitionDelay: inView ? "400ms" : "0ms" }}
+                >
                     <Image
                         src={CAE}
                         alt="CAE Project"
@@ -159,7 +171,10 @@ export default function Projects() {
                     </div>
                 </div>
 
-                <div className="flex flex-col gap-4">
+                <div
+                    className={`flex flex-col gap-4 animate-fade ${inView ? "is-visible" : ""}`}
+                    style={{ transitionDelay: inView ? "600ms" : "0ms" }}
+                >
                     <Image
                         src={Flowascend}
                         alt="Flowascend Project"
