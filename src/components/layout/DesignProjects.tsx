@@ -33,21 +33,19 @@ export default function DesignProjects() {
                             A design project for a local starting tailor shop.
                         </p>
                     </div>
-                    <div className="flex gap-2 flex-wrap">
-                        <Button
-                            type="secondary"
-                            text="Download"
-                            link="/figma-files/Tailors.fig"
-                            download="Tailors.fig"
-                            icon={
-                                <Image
-                                    src={FigmaIcon}
-                                    alt="Figma"
-                                    className="w-5 h-5"
-                                />
-                            }
-                        />
-                    </div>
+                    <Button
+                        type="secondary"
+                        text="Download"
+                        link="/figma-files/Tailors.fig"
+                        download="Tailors.fig"
+                        icon={
+                            <Image
+                                src={FigmaIcon}
+                                alt="Figma"
+                                className="w-5 h-5"
+                            />
+                        }
+                    />
                 </div>
 
                 <div className="flex flex-col gap-4">
@@ -66,21 +64,19 @@ export default function DesignProjects() {
                             expenses, and get reminders for upcoming services.
                         </p>
                     </div>
-                    <div className="flex gap-2 flex-wrap">
-                        <Button
-                            type="secondary"
-                            text="Download"
-                            link="/figma-files/CarBuddy.fig"
-                            download="CarBuddy.fig"
-                            icon={
-                                <Image
-                                    src={FigmaIcon}
-                                    alt="Figma"
-                                    className="w-5 h-5"
-                                />
-                            }
-                        />
-                    </div>
+                    <Button
+                        type="secondary"
+                        text="Download"
+                        link="/figma-files/CarBuddy.fig"
+                        download="CarBuddy.fig"
+                        icon={
+                            <Image
+                                src={FigmaIcon}
+                                alt="Figma"
+                                className="w-5 h-5"
+                            />
+                        }
+                    />
                 </div>
 
                 <div className="flex flex-col gap-4">
@@ -99,21 +95,19 @@ export default function DesignProjects() {
                             them with friends.
                         </p>
                     </div>
-                    <div className="flex gap-2 flex-wrap">
-                        <Button
-                            type="secondary"
-                            text="Download"
-                            link="/figma-files/Memendar.fig"
-                            download="Memendar.fig"
-                            icon={
-                                <Image
-                                    src={FigmaIcon}
-                                    alt="Figma"
-                                    className="w-5 h-5"
-                                />
-                            }
-                        />
-                    </div>
+                    <Button
+                        type="secondary"
+                        text="Download"
+                        link="/figma-files/Memendar.fig"
+                        download="Memendar.fig"
+                        icon={
+                            <Image
+                                src={FigmaIcon}
+                                alt="Figma"
+                                className="w-5 h-5"
+                            />
+                        }
+                    />
                 </div>
 
                 <div className="flex flex-col gap-4">
@@ -132,21 +126,19 @@ export default function DesignProjects() {
                             and apparel store.
                         </p>
                     </div>
-                    <div className="flex gap-2 flex-wrap">
-                        <Button
-                            type="secondary"
-                            text="Download"
-                            link="/figma-files/Strenx.fig"
-                            download="Strenx.fig"
-                            icon={
-                                <Image
-                                    src={FigmaIcon}
-                                    alt="Figma"
-                                    className="w-5 h-5"
-                                />
-                            }
-                        />
-                    </div>
+                    <Button
+                        type="secondary"
+                        text="Download"
+                        link="/figma-files/Strenx.fig"
+                        download="Strenx.fig"
+                        icon={
+                            <Image
+                                src={FigmaIcon}
+                                alt="Figma"
+                                className="w-5 h-5"
+                            />
+                        }
+                    />
                 </div>
 
                 <div className="flex flex-col gap-4">
@@ -164,21 +156,19 @@ export default function DesignProjects() {
                             A SaaS platform started by me selling gym shirts.
                         </p>
                     </div>
-                    <div className="flex gap-2 flex-wrap">
-                        <Button
-                            type="secondary"
-                            text="Download"
-                            link="/figma-files/Flowascend.fig"
-                            download="Flowascend.fig"
-                            icon={
-                                <Image
-                                    src={FigmaIcon}
-                                    alt="Figma"
-                                    className="w-5 h-5"
-                                />
-                            }
-                        />
-                    </div>
+                    <Button
+                        type="secondary"
+                        text="Download"
+                        link="/figma-files/Flowascend.fig"
+                        download="Flowascend.fig"
+                        icon={
+                            <Image
+                                src={FigmaIcon}
+                                alt="Figma"
+                                className="w-5 h-5"
+                            />
+                        }
+                    />
                 </div>
             </div>
         </div>

@@ -33,6 +33,10 @@ export default function Work() {
                             user interface.
                         </li>
                         <li className="text-sm text-(--subtext) leading-tight">
+                            Coded a landing page to present the product and its
+                            features.
+                        </li>
+                        <li className="text-sm text-(--subtext) leading-tight">
                             Created a wireframe on Figma to visualize the user
                             interface and user experience.
                         </li>
