@@ -19,7 +19,7 @@ export default function Projects() {
     return (
         <div className="bg-(--div-bg) border border-(--div-stroke) p-4 rounded-xl flex flex-col gap-4 flex-1 shadow-[0_4px_12px_var(--shadow)] mt-10">
             <h1 className="text-lg font-semibold text-(--subtext) border-b border-(--separator) pb-2 ">
-                Projects
+                Coding Projects
             </h1>
 
             <div className="flex flex-col gap-8 p-0 md:p-4">
