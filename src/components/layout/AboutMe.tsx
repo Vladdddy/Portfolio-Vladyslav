@@ -16,13 +16,9 @@ export default function AboutMe() {
 
     return (
         <div className="flex flex-col">
-            <h1 className="text-(--text) text-2xl font-bold tracking-wide">
-                Vladyslav Bukator
+            <h1 className="text-(--text) text-9xl">
+                Web Developer & UX/UI Designer
             </h1>
-
-            <p className="text-(--subtext) text-md">
-                Web Developer & UX/UI Designer | Italy, Milan
-            </p>
 
             <p className="text-(--text) text-md mt-4 max-w-2xl leading-snug">
                 I&apos;m currently working at{" "}

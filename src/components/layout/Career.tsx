@@ -3,32 +3,41 @@
 import React from "react";
 import Work from "./Work";
 import Education from "./Education";
-import { useInView } from "@/hooks/useInView";
 
 export default function Career() {
-    const { ref, inView } = useInView<HTMLElement>();
-
     return (
-        <section ref={ref} className="mt-10">
-            <div className="flex flex-col md:flex-row gap-4 md:gap-10">
-                <div
-                    className={`bg-(--div-bg) border border-(--div-stroke) p-4 rounded-xl flex flex-col gap-4 flex-1 shadow-[0_4px_12px_var(--shadow)] animate-on-scroll ${inView ? "is-visible" : ""}`}
-                >
-                    <h1 className="text-lg font-semibold text-(--subtext) border-b border-(--separator) pb-2 ">
-                        Work Experience
-                    </h1>
-                    <Work />
-                </div>
-                <div
-                    className={`bg-(--div-bg) border border-(--div-stroke) p-4 rounded-xl flex flex-col gap-4 flex-1 shadow-[0_4px_12px_var(--shadow)] animate-on-scroll ${inView ? "is-visible" : ""}`}
-                    style={{ transitionDelay: inView ? "150ms" : "0ms" }}
-                >
-                    <h1 className="text-lg font-semibold text-(--subtext) border-b border-(--separator) pb-2">
-                        Education
-                    </h1>
-                    <Education />
-                </div>
+        <section className="mt-10">
+            <div className="flex flex-col md:flex-row gap-4 md:gap-10 mt-20">
+                <h1 className="text-(--subtext) w-fit text-xs md:text-sm tracking-widest pb-2 relative uppercase mb-10">
+                    Work Experience
+                    <span
+                        className="absolute bottom-0 left-0 w-full"
+                        style={{
+                            height: "1px",
+                            background:
+                                "linear-gradient(90deg, var(--primary), var(--light-bg))",
+                        }}
+                    />
+                </h1>
             </div>
+
+            <Work />
+
+            <div className="flex flex-col md:flex-row gap-4 md:gap-10 mt-20">
+                <h1 className="text-(--subtext) w-fit text-xs md:text-sm tracking-widest pb-2 relative uppercase mb-10">
+                    Education
+                    <span
+                        className="absolute bottom-0 left-0 w-full"
+                        style={{
+                            height: "1px",
+                            background:
+                                "linear-gradient(90deg, var(--primary), var(--light-bg))",
+                        }}
+                    />
+                </h1>
+            </div>
+
+            <Education />
         </section>
     );
 }

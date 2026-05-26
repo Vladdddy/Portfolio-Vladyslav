@@ -1,251 +1,152 @@
 "use client";
 
-import React from "react";
-import Image from "next/image";
-import Newmann from "@/assets/projects-images/newmann-prj.png";
-import CAE from "@/assets/projects-images/cae-prj.png";
-import Flowascend from "@/assets/projects-images/flowascend-prj.png";
-import Button from "../ui/Button";
-import GithubIcon from "@/assets/icons/github";
-import GlobeIcon from "@/assets/icons/globe";
-import NextIcon from "@/assets/icons/next.png";
-import TailwindIcon from "@/assets/icons/tailwind.png";
-import FigmaIcon from "@/assets/icons/figma.png";
-import ReactIcon from "@/assets/icons/react.png";
-import ExpressIcon from "@/assets/icons/express.png";
-import SQLIcon from "@/assets/icons/sql.png";
-import { useInView } from "@/hooks/useInView";
+import React, { useState, useCallback } from "react";
+import Image, { StaticImageData } from "next/image";
+import ArrowUpIcon from "@/assets/icons/arrowUp";
+import newmannImg from "@/assets/projects-images/newmann-prj.png";
+import caeImg from "@/assets/projects-images/cae-prj.png";
+import flowascendImg from "@/assets/projects-images/flowascend-prj.png";
+
+const projects = [
+    {
+        number: "01",
+        title: "AI Dashboard",
+        company: "Newmann",
+        description:
+            "Gmail oriented dashboard that helps users manage labels with AI and more. Built a responsive frontend with Next.js and Tailwind CSS, starting from a Figma wireframe to map out the UI/UX.",
+        tags: ["Next", "Tailwind", "Figma"],
+        href: "https://newmann.ai/",
+        image: newmannImg,
+    },
+    {
+        number: "02",
+        title: "Simtech Web App",
+        company: "CAE",
+        description:
+            "A web application developed to manage employees, their shifts and tasks. This project was assigned to me during my internship at CAE",
+        tags: ["React", "Express", "Tailwind", "SQL"],
+        href: "https://github.com/Vladdddy/CAE-Rework",
+        image: caeImg,
+    },
+    {
+        number: "03",
+        title: "Flowascend",
+        company: "Flowascend",
+        description:
+            "E-commerce platform for selling t-shirts with unique designs. It was founded by me as a side project but I put it on hold due to insufficient resources to continue.",
+        tags: ["React", "Express", "Figma"],
+        href: "https://flowascend.vercel.app/",
+        image: flowascendImg,
+    },
+];
 
 export default function Projects() {
-    const { ref, inView } = useInView();
+    const [tooltip, setTooltip] = useState<{
+        x: number;
+        y: number;
+        image: StaticImageData | null;
+    }>({ x: 0, y: 0, image: null });
+
+    const handleMouseMove = useCallback(
+        (e: React.MouseEvent, image: StaticImageData) => {
+            setTooltip({ x: e.clientX, y: e.clientY, image });
+        },
+        [],
+    );
+
+    const handleMouseLeave = useCallback(() => {
+        setTooltip((prev) => ({ ...prev, image: null }));
+    }, []);
 
     return (
-        <div
-            ref={ref}
-            className={`bg-(--div-bg) border border-(--div-stroke) p-4 rounded-xl flex flex-col gap-4 flex-1 shadow-[0_4px_12px_var(--shadow)] mt-10 animate-on-scroll ${inView ? "is-visible" : ""}`}
-        >
-            <h1 className="text-lg font-semibold text-(--subtext) border-b border-(--separator) pb-2 ">
-                Coding Projects
-            </h1>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 md:gap-8 p-0 md:p-4">
-                <div
-                    className={`flex flex-col gap-4 animate-fade ${inView ? "is-visible" : ""}`}
-                    style={{ transitionDelay: inView ? "200ms" : "0ms" }}
-                >
-                    <Image
-                        src={Newmann}
-                        alt="Newmann Project"
-                        className="w-full h-auto rounded-xl shadow-[0_4px_12px_var(--shadow)] object-fit border border-(--separator)"
+        <section className="mt-10">
+            <div className="flex flex-col md:flex-row gap-4 md:gap-10 mt-20">
+                <h1 className="text-(--subtext) w-fit text-xs md:text-sm tracking-widest pb-2 relative uppercase mb-10">
+                    Coding Projects
+                    <span
+                        className="absolute bottom-0 left-0 w-full"
+                        style={{
+                            height: "1px",
+                            background:
+                                "linear-gradient(90deg, var(--primary), var(--light-bg))",
+                        }}
                     />
-                    <div className="flex flex-col gap-1">
-                        <h1 className="text-(--text) text-md font-bold tracking-wide leading-tight">
-                            Newmann{" "}
-                            <span className="text-(--subtext) font-normal tracking-normal text-sm">
-                                (Dashboard is not public)
-                            </span>
-                        </h1>
-
-                        <p className="text-(--subtext) text-sm leading-tight md:min-h-20">
-                            Gmail oriented dashboard that helps users manage
-                            labels with AI and more. Built a responsive frontend
-                            with Next.js and Tailwind CSS, starting from a Figma
-                            wireframe to map out the UI/UX.
-                        </p>
-                    </div>
-                    <Button
-                        type="primary"
-                        text="View landing"
-                        link="https://newmann.ai/"
-                        icon={<GlobeIcon className="w-5 h-5" />}
-                    />
-                    <div className="flex flex-col gap-2 mt-2">
-                        <p className="text-(--subtext) text-sm">
-                            Technologies used
-                        </p>
-                        <div className="flex gap-2 flex-wrap">
-                            <span className="flex items-center justify-center gap-2 py-1 px-2 border border-(--div-stroke) rounded-lg shadow-[0_4px_12px_var(--shadow)]">
-                                <Image
-                                    src={NextIcon}
-                                    alt="Next.js"
-                                    className="w-7 h-7"
-                                />
-                                <p className="text-sm text-(--subtext)">
-                                    Next.js
-                                </p>
-                            </span>
-                            <span className="flex items-center justify-center gap-2 py-1 px-2 border border-(--div-stroke) rounded-lg shadow-[0_4px_12px_var(--shadow)]">
-                                <Image
-                                    src={TailwindIcon}
-                                    alt="Tailwind CSS"
-                                    className="w-7 h-7"
-                                />
-                                <p className="text-sm text-(--subtext)">
-                                    Tailwind
-                                </p>
-                            </span>
-                            <span className="flex items-center justify-center gap-2 py-1 px-2 border border-(--div-stroke) rounded-lg shadow-[0_4px_12px_var(--shadow)]">
-                                <Image
-                                    src={FigmaIcon}
-                                    alt="Figma"
-                                    className="w-7 h-7"
-                                />
-                                <p className="text-sm text-(--subtext)">
-                                    Figma
-                                </p>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-
-                <div
-                    className={`flex flex-col gap-4 animate-fade ${inView ? "is-visible" : ""}`}
-                    style={{ transitionDelay: inView ? "400ms" : "0ms" }}
-                >
-                    <Image
-                        src={CAE}
-                        alt="CAE Project"
-                        className="w-full h-auto rounded-xl shadow-[0_4px_12px_var(--shadow)] object-fit border border-(--separator)"
-                    />
-                    <div className="flex flex-col gap-1">
-                        <h1 className="text-(--text) text-md font-bold tracking-wide leading-tight">
-                            CAE
-                        </h1>
-
-                        <p className="text-(--subtext) text-sm leading-tight md:min-h-20">
-                            A web application developed to manage employees,
-                            their shifts and tasks. This project was assigned to
-                            me during my internship at CAE.
-                        </p>
-                    </div>
-                    <Button
-                        type="primary"
-                        text="Git repository"
-                        link="https://github.com/Vladdddy/CAE-Rework"
-                        icon={<GithubIcon className="w-5 h-5" />}
-                    />
-                    <div className="flex flex-col gap-2 mt-2">
-                        <p className="text-(--subtext) text-sm">
-                            Technologies used
-                        </p>
-                        <div className="flex gap-2 flex-wrap">
-                            <span className="flex items-center justify-center gap-2 py-1 px-2 border border-(--div-stroke) rounded-lg shadow-[0_4px_12px_var(--shadow)]">
-                                <Image
-                                    src={ReactIcon}
-                                    alt="React"
-                                    className="w-7 h-7"
-                                />
-                                <p className="text-sm text-(--subtext)">
-                                    React
-                                </p>
-                            </span>
-                            <span className="flex items-center justify-center gap-2 py-1 px-2 border border-(--div-stroke) rounded-lg shadow-[0_4px_12px_var(--shadow)]">
-                                <Image
-                                    src={TailwindIcon}
-                                    alt="Tailwind CSS"
-                                    className="w-7 h-7"
-                                />
-                                <p className="text-sm text-(--subtext)">
-                                    Tailwind
-                                </p>
-                            </span>
-                            <span className="flex items-center justify-center gap-2 py-1 px-2 border border-(--div-stroke) rounded-lg shadow-[0_4px_12px_var(--shadow)]">
-                                <Image
-                                    src={ExpressIcon}
-                                    alt="Express"
-                                    className="w-7 h-7"
-                                />
-                                <p className="text-sm text-(--subtext)">
-                                    Express JS
-                                </p>
-                            </span>
-                            <span className="flex items-center justify-center gap-2 py-1 px-2 border border-(--div-stroke) rounded-lg shadow-[0_4px_12px_var(--shadow)]">
-                                <Image
-                                    src={SQLIcon}
-                                    alt="SQL"
-                                    className="w-7 h-7"
-                                />
-                                <p className="text-sm text-(--subtext)">SQL</p>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-
-                <div
-                    className={`flex flex-col gap-4 animate-fade ${inView ? "is-visible" : ""}`}
-                    style={{ transitionDelay: inView ? "600ms" : "0ms" }}
-                >
-                    <Image
-                        src={Flowascend}
-                        alt="Flowascend Project"
-                        className="w-full h-auto rounded-xl shadow-[0_4px_12px_var(--shadow)] object-fit border border-(--separator)"
-                    />
-                    <div className="flex flex-col gap-1">
-                        <h1 className="text-(--text) text-md font-bold tracking-wide leading-tight">
-                            Flowascend
-                        </h1>
-
-                        <p className="text-(--subtext) text-sm leading-tight md:min-h-20">
-                            E-commerce platform for selling t-shirts with unique
-                            designs. It was founded by me as a side project but
-                            I put it on hold due to insufficient resources to
-                            continue.
-                        </p>
-                    </div>
-                    <div className="flex gap-2 flex-col">
-                        <Button
-                            type="primary"
-                            text="View website"
-                            link="https://flowascend.vercel.app/"
-                            icon={<GlobeIcon className="w-5 h-5" />}
-                        />
-
-                        <Button
-                            type="secondary"
-                            text="Git repository"
-                            link="https://github.com/Vladdddy/Flowascend"
-                            icon={<GithubIcon className="w-5 h-5" />}
-                        />
-                    </div>
-                    <div className="flex flex-col gap-2 mt-2">
-                        <p className="text-(--subtext) text-sm">
-                            Technologies used
-                        </p>
-                        <div className="flex gap-2 flex-wrap">
-                            <span className="flex items-center justify-center gap-2 py-1 px-2 border border-(--div-stroke) rounded-lg shadow-[0_4px_12px_var(--shadow)]">
-                                <Image
-                                    src={ReactIcon}
-                                    alt="React"
-                                    className="w-7 h-7"
-                                />
-                                <p className="text-sm text-(--subtext)">
-                                    React
-                                </p>
-                            </span>
-                            <span className="flex items-center justify-center gap-2 py-1 px-2 border border-(--div-stroke) rounded-lg shadow-[0_4px_12px_var(--shadow)]">
-                                <Image
-                                    src={ExpressIcon}
-                                    alt="Express"
-                                    className="w-7 h-7"
-                                />
-                                <p className="text-sm text-(--subtext)">
-                                    Express JS
-                                </p>
-                            </span>
-                            <span className="flex items-center justify-center gap-2 py-1 px-2 border border-(--div-stroke) rounded-lg shadow-[0_4px_12px_var(--shadow)]">
-                                <Image
-                                    src={FigmaIcon}
-                                    alt="Figma"
-                                    className="w-7 h-7"
-                                />
-                                <p className="text-sm text-(--subtext)">
-                                    Figma
-                                </p>
-                            </span>
-                        </div>
-                    </div>
-                </div>
+                </h1>
             </div>
-        </div>
+
+            {projects.map((project) => (
+                <a
+                    key={project.number}
+                    href={project.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex flex-col md:flex-row items-start gap-4 cursor-pointer"
+                    onMouseMove={(e) => handleMouseMove(e, project.image)}
+                    onMouseLeave={handleMouseLeave}
+                >
+                    <div className="group flex flex-col gap-4 border-b border-(--separator) py-20 w-full transition-colors duration-200">
+                        <div className="flex items-start md:items-center flex-col md:flex-row justify-between gap-10 md:gap-4">
+                            <div className="flex items-center gap-4 md:gap-10">
+                                <span className="text-(--primary) text-xs md:text-lg font-normal">
+                                    {project.number}
+                                </span>
+                                <h1 className="text-4xl lg:text-7xl font-black text-(--subtext) group-hover:text-(--text-white) transition-colors duration-200">
+                                    {project.title}
+                                </h1>
+                            </div>
+
+                            <div className="flex flex-col items-start gap-4">
+                                <div className="flex items-start md:items-center justify-between gap-4 w-full">
+                                    <h1 className="text-(--subtext) group-hover:text-(--text-white) transition-colors duration-200 text-sm tracking-wide">
+                                        <span className="text-(--primary) text-md mr-2">
+                                            ✦
+                                        </span>
+                                        {project.company}
+                                    </h1>
+                                    <span className="text-(--primary)">
+                                        <ArrowUpIcon className="w-4 h-4 md:w-6 md:h-6" />
+                                    </span>
+                                </div>
+
+                                <p className="text-(--placeholder-text) group-hover:text-(--text-white) transition-colors duration-200 text-xs leading-tight max-w-xs">
+                                    {project.description}
+                                </p>
+
+                                <div className="flex flex-wrap max-w-sm gap-2">
+                                    {project.tags.map((tag) => (
+                                        <p
+                                            key={tag}
+                                            className="w-fit text-(--subtext) text-xs border border-(--div-stroke) py-2 px-4 rounded-full flex items-center justify-start gap-2"
+                                        >
+                                            {tag}
+                                        </p>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            ))}
+
+            {tooltip.image && (
+                <div
+                    className="fixed z-50 pointer-events-none"
+                    style={{
+                        left: tooltip.x + 24,
+                        top: tooltip.y - 120,
+                    }}
+                >
+                    <div className="rounded-xs overflow-hidden border border-(--separator)">
+                        <Image
+                            src={tooltip.image}
+                            alt="Project preview"
+                            width={600}
+                            className="object-cover"
+                            unoptimized
+                        />
+                    </div>
+                </div>
+            )}
+        </section>
     );
 }

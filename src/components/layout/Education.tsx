@@ -1,31 +1,25 @@
 import React from "react";
-import Image from "next/image";
-import ITSINCOM from "../../assets/education-images/itsincom.jpeg";
-import Itis from "../../assets/education-images/itis.jpeg";
 
 export default function Education() {
     return (
-        <div className="flex flex-col gap-10">
-            <div className="flex flex-col md:flex-row items-start gap-4">
-                <Image
-                    src={ITSINCOM}
-                    alt="ITSINCOM Logo"
-                    width={60}
-                    height={60}
-                    className="rounded-full shadow-[0_4px_12px_var(--shadow)] border border-(--div-stroke)"
-                />
-                <div className="flex flex-col gap-0">
-                    <p className="text-xs text-(--subtext) leading-tight mb-1">
-                        Jan 2024 - Sep 2026
-                    </p>
-                    <h1 className="font-semibold text-lg text-(--text) leading-tight">
-                        ITSINCOM
+        <div className="flex flex-col md:flex-row gap-10">
+            <div className="group flex flex-col md:flex-row items-start gap-4 flex-1 border border-(--separator) rounded-xs p-6">
+                <div className="flex flex-col gap-4">
+                    <div className="flex items-center gap-4 flex-wrap">
+                        <p className="w-fit text-(--subtext) text-xs border border-(--div-stroke) py-2 px-4 rounded-full flex items-center justify-start gap-2">
+                            Jan 2024 - Jun 2026
+                        </p>
+                        <h1 className="text-(--primary) text-md">✦</h1>
+                        <h1 className="text-(--subtext) text-xs md:text-sm tracking-wide">
+                            ITSINCOM
+                        </h1>
+                    </div>
+                    <h1 className="text-xl lg:text-4xl font-black text-(--text)">
+                        Web Development
                     </h1>
-                    <h4 className="text-md text-(--subtext) leading-tight">
-                        Computer Programming
-                    </h4>
-                    <ul className="list-disc mt-4 ml-4 flex flex-col gap-2">
-                        <li className="text-sm text-(--subtext) leading-tight">
+
+                    <ul className="list-disc ml-4 flex flex-col gap-2">
+                        <li className="text-xs text-(--placeholder-text) leading-tight">
                             Activities and societies: Web Development, Backend,
                             Frontend, Softskills, Digital Security
                         </li>
@@ -33,30 +27,27 @@ export default function Education() {
                 </div>
             </div>
 
-            <div className="flex flex-col md:flex-row items-start gap-4">
-                <Image
-                    src={Itis}
-                    alt="Itis Logo"
-                    width={60}
-                    height={60}
-                    className="rounded-full shadow-[0_4px_12px_var(--shadow)] border border-(--div-stroke) p-1"
-                />
-                <div className="flex flex-col gap-0">
-                    <p className="text-xs text-(--subtext) leading-tight mb-1">
-                        Sep 2019 - Jun 2024
-                    </p>
-                    <h1 className="font-semibold text-lg text-(--text) leading-tight">
-                        ITIS Ponti
-                    </h1>
-                    <h4 className="text-md text-(--subtext) leading-tight">
+            <div className="group flex flex-col md:flex-row items-start gap-4 flex-1 border border-(--separator) rounded-xs p-6">
+                <div className="flex flex-col gap-4">
+                    <div className="flex items-center gap-4 flex-wrap">
+                        <p className="w-fit text-(--subtext) text-xs border border-(--div-stroke) py-2 px-4 rounded-full flex items-center justify-start gap-2">
+                            Sep 2019 - Jun 2024
+                        </p>
+                        <h1 className="text-(--primary) text-md">✦</h1>
+                        <h1 className="text-(--subtext) text-xs md:text-sm tracking-wide">
+                            ITIS Ponti
+                        </h1>
+                    </div>
+                    <h1 className="text-xl lg:text-4xl font-black text-(--text)">
                         IT Highschool
-                    </h4>
-                    <ul className="list-disc mt-4 ml-4 flex flex-col gap-2">
-                        <li className="text-sm text-(--subtext) leading-tight">
+                    </h1>
+
+                    <ul className="list-disc ml-4 flex flex-col gap-2">
+                        <li className="text-xs text-(--placeholder-text) leading-tight">
                             Basic programming lessons in Python, Java, C, and
                             HTML.
                         </li>
-                        <li className="text-sm text-(--subtext) leading-tight">
+                        <li className="text-xs text-(--placeholder-text) leading-tight">
                             Computer Science lessons covering topics such as
                             algorithms, data structures, and software
                             development principles.
