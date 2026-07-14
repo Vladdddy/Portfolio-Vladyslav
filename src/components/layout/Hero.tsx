@@ -52,14 +52,14 @@ export default function Hero() {
                     <p className="text-(--subtext) text-xs md:text-[14px] mt-4 max-w-xl leading-snug">
                         Founding Frontend & UX Engineer at{" "}
                         <Link
-                            href="https://www.linkedin.com/company/newmann/"
+                            href="https://newmann.ai/"
                             target="_blank"
                             className="font-normal text-(--text) cursor-pointer"
                         >
                             Newmann
                         </Link>
                         . I design clean interfaces in Figma and engineer them
-                        into production-ready products with React, Next and
+                        into production-ready products with React/Next and
                         Tailwind.
                     </p>
 

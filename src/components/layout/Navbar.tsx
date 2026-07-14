@@ -240,7 +240,7 @@ export default function Navbar() {
                                 "menu-item-enter 0.3s cubic-bezier(0.22,1,0.36,1) both",
                         }}
                     >
-                        <div className="flex flex-col items-start gap-4 md:gap-10 h-screen">
+                        <div className="flex flex-col items-start justify-center lg:justify-start text-center lg:text-start gap-10 md:gap-10 h-screen">
                             {[
                                 {
                                     num: "01",
@@ -278,17 +278,17 @@ export default function Navbar() {
                                         }, 50);
                                     }}
                                 >
-                                    <span className="text-(--primary) text-xs md:text-md mr-4 font-semibold">
+                                    <span className="hidden lg:inline text-(--primary) text-xs md:text-md mr-4 font-semibold">
                                         {num}
                                     </span>
-                                    <span className="text-2xl lg:text-[100px] font-black">
+                                    <span className="text-4xl lg:text-[100px] font-black">
                                         {label}
                                     </span>
                                 </div>
                             ))}
                         </div>
                         <div
-                            className="flex gap-4 mt-10 text-(--subtext) ml-auto"
+                            className="flex items-center gap-4 mt-4 text-(--subtext) ml-auto"
                             style={{
                                 animation:
                                     "menu-item-enter 0.5s cubic-bezier(0.22,1,0.36,1) 240ms both",

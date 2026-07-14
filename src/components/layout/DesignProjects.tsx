@@ -104,7 +104,7 @@ export default function DesignProjects() {
                                 </h1>
                             </div>
 
-                            <div className="flex flex-col items-end gap-4 max-w-xs">
+                            <div className="flex flex-col items-start md:items-end gap-4 w-full md:max-w-xs">
                                 <p className="text-(--placeholder-text) group-hover:text-(--text-white) transition-colors duration-200 text-xs leading-tight">
                                     {project.description}
                                 </p>

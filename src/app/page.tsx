@@ -3,6 +3,7 @@ import Career from "@/components/layout/Career";
 import Projects from "@/components/layout/Projects";
 import DesignProjects from "@/components/layout/DesignProjects";
 import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 
 export default function Home() {
     return (
@@ -18,6 +19,7 @@ export default function Home() {
             <div id="design-projects">
                 <DesignProjects />
             </div>
+            <Footer />
         </main>
     );
 }

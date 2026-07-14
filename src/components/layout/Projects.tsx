@@ -6,6 +6,7 @@ import ArrowUpIcon from "@/assets/icons/arrowUp";
 import newmannImg from "@/assets/projects-images/newmann-prj.png";
 import caeImg from "@/assets/projects-images/cae-prj.png";
 import flowascendImg from "@/assets/projects-images/flowascend-prj.png";
+import newmannWebsiteImg from "@/assets/projects-images/newmann-website.png";
 
 const projects = [
     {
@@ -18,9 +19,20 @@ const projects = [
         href: "https://newmann.ai/",
         image: newmannImg,
     },
+
     {
         number: "02",
-        title: "Simtech Web App",
+        title: "Newmann Website",
+        company: "Newmann",
+        description:
+            "The main website of Newmann, I designed and developed it to showcase the product and its features, as well as to provide information about the company.",
+        tags: ["Next", "Tailwind", "Figma"],
+        href: "https://newmann.ai/",
+        image: newmannWebsiteImg,
+    },
+    {
+        number: "03",
+        title: "Management App",
         company: "CAE",
         description:
             "A web application developed to manage employees, their shifts and tasks. This project was assigned to me during my internship at CAE",
@@ -29,8 +41,8 @@ const projects = [
         image: caeImg,
     },
     {
-        number: "03",
-        title: "Flowascend",
+        number: "04",
+        title: "Landing Page",
         company: "Flowascend",
         description:
             "E-commerce platform for selling t-shirts with unique designs. It was founded by me as a side project but I put it on hold due to insufficient resources to continue.",
