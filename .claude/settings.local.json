@@ -5,7 +5,11 @@
       "Bash(npm uninstall *)",
       "Bash(mkdir -p /c/Users/VladyslavBukator/Downloads/portfolio-new/public/figma-files)",
       "Bash(cp /c/Users/VladyslavBukator/Downloads/portfolio-new/src/assets/figma-files/* /c/Users/VladyslavBukator/Downloads/portfolio-new/public/figma-files/)",
-      "Bash(npx tsc *)"
+      "Bash(npx tsc *)",
+      "Bash(cd \"c:\\\\Development\\\\Portfolio-Vladyslav\" && cp src/assets/Resume_Vladyslav.pdf public/Resume_Vladyslav.pdf && ls -la public/Resume_Vladyslav.pdf)"
+    ],
+    "additionalDirectories": [
+      "c:\\Development\\Portfolio-Vladyslav\\src\\assets"
     ]
   }
 }
