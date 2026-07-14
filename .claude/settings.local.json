@@ -4,7 +4,8 @@
       "Bash(npm i *)",
       "Bash(npm uninstall *)",
       "Bash(mkdir -p /c/Users/VladyslavBukator/Downloads/portfolio-new/public/figma-files)",
-      "Bash(cp /c/Users/VladyslavBukator/Downloads/portfolio-new/src/assets/figma-files/* /c/Users/VladyslavBukator/Downloads/portfolio-new/public/figma-files/)"
+      "Bash(cp /c/Users/VladyslavBukator/Downloads/portfolio-new/src/assets/figma-files/* /c/Users/VladyslavBukator/Downloads/portfolio-new/public/figma-files/)",
+      "Bash(npx tsc *)"
     ]
   }
 }

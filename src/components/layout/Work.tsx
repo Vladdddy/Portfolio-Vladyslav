@@ -1,9 +1,10 @@
 import React from "react";
+import ScrollReveal from "../ui/ScrollReveal";
 
 export default function Work() {
     return (
         <div className="flex flex-col gap-20">
-            <div className="group flex flex-col md:flex-row items-start gap-4">
+            <ScrollReveal className="group flex flex-col md:flex-row items-start gap-4">
                 <div className="flex flex-col gap-4 border-b border-(--separator) pb-10 w-full">
                     <div className="flex items-center gap-4">
                         <p className="w-fit text-(--subtext) text-xs border border-(--div-stroke) py-2 px-4 rounded-full flex items-center justify-start gap-2">
@@ -32,9 +33,12 @@ export default function Work() {
                         </li>
                     </ul>
                 </div>
-            </div>
+            </ScrollReveal>
 
-            <div className="group flex flex-col md:flex-row items-start gap-4">
+            <ScrollReveal
+                delay={150}
+                className="group flex flex-col md:flex-row items-start gap-4"
+            >
                 <div className="flex flex-col gap-4 border-b border-(--separator) pb-10 w-full">
                     <div className="flex items-center flex-wrap gap-4">
                         <p className="w-fit text-(--subtext) text-xs border border-(--div-stroke) py-2 px-4 rounded-full flex items-center justify-start gap-2">
@@ -71,7 +75,7 @@ export default function Work() {
                         </li>
                     </ul>
                 </div>
-            </div>
+            </ScrollReveal>
         </div>
     );
 }

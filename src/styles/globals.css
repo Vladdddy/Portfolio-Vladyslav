@@ -3,12 +3,6 @@
 
 :root {
     /* Layout colors */
-    /* --light-bg: #f7f7f7;
-    --div-bg: #ffffff;
-    --div-bg-hover: #e6e6e6;
-    --div-stroke: #e0e0e0;
-    --separator: #ebebeb;
-    --button-border: #e6e6e6; */
     --light-bg: hsl(0, 0%, 5%);
     --div-bg: hsl(0, 0%, 12%);
     --div-bg-hover: hsl(0, 0%, 16%);
@@ -25,11 +19,6 @@
     --primary-dark: #160075;
 
     /* Typography */
-    /* --text: #333333;
-    --subtext: #666666;
-    --placeholder-text: #999999;
-    --green: #22c55e;
-    --green-light: #dcfce7; */
     --text: #e0e0e0;
     --text-white: #ffffff;
     --subtext: #a0a0a0;

@@ -3,6 +3,8 @@
 import React, { useState, useCallback } from "react";
 import Image, { StaticImageData } from "next/image";
 import ArrowUpIcon from "@/assets/icons/arrowUp";
+import ScrollReveal from "@/components/ui/ScrollReveal";
+import Modal from "@/components/ui/Modal";
 import newmannImg from "@/assets/projects-images/newmann-prj.png";
 import caeImg from "@/assets/projects-images/cae-prj.png";
 import flowascendImg from "@/assets/projects-images/flowascend-prj.png";
@@ -18,6 +20,7 @@ const projects = [
         tags: ["Next", "Tailwind", "Figma"],
         href: "https://newmann.ai/",
         image: newmannImg,
+        restricted: true,
     },
 
     {
@@ -39,6 +42,7 @@ const projects = [
         tags: ["React", "Express", "Tailwind", "SQL"],
         href: "https://github.com/Vladdddy/CAE-Rework",
         image: caeImg,
+        restricted: true,
     },
     {
         number: "04",
@@ -58,6 +62,7 @@ export default function Projects() {
         y: number;
         image: StaticImageData | null;
     }>({ x: 0, y: 0, image: null });
+    const [warningOpen, setWarningOpen] = useState(false);
 
     const handleMouseMove = useCallback(
         (e: React.MouseEvent, image: StaticImageData) => {
@@ -72,7 +77,7 @@ export default function Projects() {
 
     return (
         <section className="mt-10">
-            <div className="flex flex-col md:flex-row gap-4 md:gap-10 mt-20">
+            <ScrollReveal className="flex flex-col md:flex-row gap-4 md:gap-10 mt-20">
                 <h1 className="text-(--subtext) w-fit text-xs md:text-sm tracking-widest pb-2 relative uppercase mb-10">
                     Coding Projects
                     <span
@@ -84,17 +89,29 @@ export default function Projects() {
                         }}
                     />
                 </h1>
-            </div>
+            </ScrollReveal>
 
-            {projects.map((project) => (
-                <a
+            {projects.map((project, index) => (
+                <ScrollReveal
+                    as="a"
                     key={project.number}
-                    href={project.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href={project.restricted ? undefined : project.href}
+                    target={project.restricted ? undefined : "_blank"}
+                    rel={project.restricted ? undefined : "noopener noreferrer"}
+                    delay={(index % 3) * 100}
                     className="flex flex-col md:flex-row items-start gap-4 cursor-pointer"
-                    onMouseMove={(e) => handleMouseMove(e, project.image)}
+                    onMouseMove={(e: React.MouseEvent) =>
+                        handleMouseMove(e, project.image)
+                    }
                     onMouseLeave={handleMouseLeave}
+                    onClick={
+                        project.restricted
+                            ? (e: React.MouseEvent) => {
+                                  e.preventDefault();
+                                  setWarningOpen(true);
+                              }
+                            : undefined
+                    }
                 >
                     <div className="group flex flex-col gap-4 border-b border-(--separator) py-20 w-full transition-colors duration-200">
                         <div className="flex items-start md:items-center flex-col md:flex-row justify-between gap-10 md:gap-4">
@@ -137,7 +154,7 @@ export default function Projects() {
                             </div>
                         </div>
                     </div>
-                </a>
+                </ScrollReveal>
             ))}
 
             {tooltip.image && (
@@ -159,6 +176,13 @@ export default function Projects() {
                     </div>
                 </div>
             )}
+
+            <Modal
+                open={warningOpen}
+                title="Warning"
+                description="This project is currently private or hasn't been publicly released yet, so it can't be viewed right now."
+                onClose={() => setWarningOpen(false)}
+            />
         </section>
     );
 }

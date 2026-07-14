@@ -3,6 +3,7 @@
 import React, { useState, useCallback } from "react";
 import Image, { StaticImageData } from "next/image";
 import Button from "../ui/Button";
+import ScrollReveal from "../ui/ScrollReveal";
 import flowascendImg from "@/assets/projects-images/flowascend-prj.png";
 import memendarImg from "@/assets/projects-images/memendar.jpg";
 import strenxImg from "@/assets/projects-images/strenx.jpg";
@@ -72,7 +73,7 @@ export default function DesignProjects() {
 
     return (
         <section className="mt-10">
-            <div className="flex flex-col md:flex-row gap-4 md:gap-10 mt-20">
+            <ScrollReveal className="flex flex-col md:flex-row gap-4 md:gap-10 mt-20">
                 <h1 className="text-(--subtext) w-fit text-xs md:text-sm tracking-widest pb-2 relative uppercase mb-10">
                     Design Projects
                     <span
@@ -84,13 +85,17 @@ export default function DesignProjects() {
                         }}
                     />
                 </h1>
-            </div>
+            </ScrollReveal>
 
-            {projects.map((project) => (
-                <span
+            {projects.map((project, index) => (
+                <ScrollReveal
+                    as="span"
                     key={project.number}
+                    delay={(index % 3) * 100}
                     className="flex flex-col md:flex-row items-start gap-4 cursor-pointer"
-                    onMouseMove={(e) => handleMouseMove(e, project.image)}
+                    onMouseMove={(e: React.MouseEvent) =>
+                        handleMouseMove(e, project.image)
+                    }
                     onMouseLeave={handleMouseLeave}
                 >
                     <div className="group flex flex-col gap-4 border-b border-(--separator) py-20 w-full transition-colors duration-200">
@@ -125,7 +130,7 @@ export default function DesignProjects() {
                             </div>
                         </div>
                     </div>
-                </span>
+                </ScrollReveal>
             ))}
 
             {tooltip.image && (

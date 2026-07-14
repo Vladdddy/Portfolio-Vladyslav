@@ -3,11 +3,12 @@
 import React from "react";
 import Work from "./Work";
 import Education from "./Education";
+import ScrollReveal from "../ui/ScrollReveal";
 
 export default function Career() {
     return (
         <section className="mt-10">
-            <div className="flex flex-col md:flex-row gap-4 md:gap-10 mt-20">
+            <ScrollReveal className="flex flex-col md:flex-row gap-4 md:gap-10 mt-20">
                 <h1 className="text-(--subtext) w-fit text-xs md:text-sm tracking-widest pb-2 relative uppercase mb-10">
                     Work Experience
                     <span
@@ -19,11 +20,11 @@ export default function Career() {
                         }}
                     />
                 </h1>
-            </div>
+            </ScrollReveal>
 
             <Work />
 
-            <div className="flex flex-col md:flex-row gap-4 md:gap-10 mt-20">
+            <ScrollReveal className="flex flex-col md:flex-row gap-4 md:gap-10 mt-20">
                 <h1 className="text-(--subtext) w-fit text-xs md:text-sm tracking-widest pb-2 relative uppercase mb-10">
                     Education
                     <span
@@ -35,7 +36,7 @@ export default function Career() {
                         }}
                     />
                 </h1>
-            </div>
+            </ScrollReveal>
 
             <Education />
         </section>
